@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard | StackIt</title>
+  <link rel="stylesheet" href="admin.css" />
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <div class="admin-wrapper">
+    <aside class="sidebar">
+      <h2 onclick="goHome()">StackIt 🛡️</h2>
+      <ul>
+        <li onclick="showSection('dashboard')">Dashboard</li>
+        <li onclick="showSection('moderate')">Moderate Posts</li>
+        <li onclick="showSection('users')">Users</li>
+        <li onclick="showSection('reports')">Reports</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <div id="dashboard" class="section">
+        <h3>Welcome, Admin</h3>
+        <p>Use the sidebar to moderate content and manage users.</p>
+      </div>
+
+      <div id="moderate" class="section" style="display: none;">
+        <h3>Moderate Posts</h3>
+        <div class="card">
+          <p><strong>User:</strong> @ExampleUser</p>
+          <p>“This is a suspicious post...”</p>
+          <button class="btn-approve">Approve</button>
+          <button class="btn-reject">Reject</button>
+        </div>
+      </div>
+
+      <div id="users" class="section" style="display: none;">
+        <h3>Users</h3>
+        <ul>
+          <li>@TaniyaC <button class="btn-ban">Ban</button></li>
+          <li>@Guest99 <button class="btn-ban">Ban</button></li>
+        </ul>
+      </div>
+
+      <div id="reports" class="section" style="display: none;">
+        <h3>Download Reports</h3>
+        <button class="btn-report">Download User Activity</button>
+        <button class="btn-report">Download Feedback</button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

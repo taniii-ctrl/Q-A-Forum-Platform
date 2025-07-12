@@ -1,0 +1,249 @@
+/* Modified user.css – Enhanced Neon-Dark Theme for StackIt */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #090611, #0e0e1e);
+  color: #eae6f8;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.user-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background: #121027;
+  padding: 30px 20px;
+  border-right: 1px solid #2a2a44;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h2 {
+  color: #c084fc;
+  margin-bottom: 40px;
+  font-size: 22px;
+  text-shadow: 0 0 10px #9a6eff;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  color: #e5d9ff;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background: linear-gradient(90deg, #8b5cf6, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 0 10px #a78bfa;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  overflow-y: auto;
+  background-color: #0c0c1f;
+}
+
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: #e0e7ff;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #8b5cf6;
+  box-shadow: 0 0 12px #8b5cf6;
+  background-color: #1e1e2e;
+}
+
+.notif {
+  position: relative;
+  cursor: pointer;
+}
+
+.notif i {
+  font-size: 22px;
+  color: #e879f9;
+  animation: pulse 2s infinite;
+  text-shadow: 0 0 6px #f472b6;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.notif-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: #1f1f37;
+  padding: 12px;
+  width: 220px;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+.notif:hover .notif-dropdown {
+  display: block;
+}
+
+.notif-dropdown li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #c9c9f5;
+}
+
+.post-box {
+  background: #181834;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.25);
+}
+
+textarea {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid #b084f6;
+  border-radius: 8px;
+  padding: 14px;
+  color: #fdfdff;
+  resize: none;
+  margin-bottom: 15px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+textarea:focus {
+  border-color: #d8b4fe;
+  box-shadow: 0 0 12px #a78bfa;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-post {
+  background: linear-gradient(to right, #c084fc, #7c3aed);
+  color: #fff;
+  margin-right: 10px;
+  box-shadow: 0 0 14px #c084fc;
+  transition: all 0.3s ease;
+}
+
+.btn-post:hover {
+  background: #a855f7;
+  transform: translateY(-1px);
+}
+
+.btn-follow {
+  background: #0ea5e9;
+  color: #fff;
+  box-shadow: 0 0 10px #38bdf8;
+  transition: 0.3s;
+}
+
+.btn-follow:hover {
+  background: #0f9ce5;
+  transform: scale(1.05);
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feed .post {
+  background: #1e213b;
+  padding: 18px;
+  border-radius: 10px;
+  color: #f1f1ff;
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.2);
+  animation: fadeInPost 0.6s ease;
+}
+
+@keyframes fadeInPost {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+#settings h4,
+#settings p,
+#settings strong {
+  color: #ffffff; /* or any light color that fits your theme */
+}
+
+#settings hr {
+  border-color: rgba(255, 255, 255, 0.2); /* softer line */
+}
+#ask h4,
+#ask label {
+  color: #ffffff;
+}
+.feed .post {
+  background: #1e293b;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(100, 116, 139, 0.3);
+  animation: fadeInPost 0.6s ease;
+  color: #ffffff; /* ← Add this */
+}
+
+.feed .post h5,
+.feed .post p {
+  color: #ffffff; /* ← Ensure headings and text are white */
+}
+
+.feed .post small {
+  color: #cbd5e1; /* Optional: slightly lighter for timestamps */
+}
+

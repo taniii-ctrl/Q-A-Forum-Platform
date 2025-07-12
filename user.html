@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard | StackIt</title>
+  <link rel="stylesheet" href="user.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" />
+</head>
+<body>
+  <div class="user-wrapper">
+    <div class="sidebar">
+      <h2>StackIt </h2>
+      <ul>
+        <li class="active" onclick="showSection('feed')">📜 Feed</li>
+        <li onclick="showSection('ask')">❓ Ask Question</li>
+        <li onclick="showSection('settings')">⚙️ Settings</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="user-header">
+        <div class="user-info">
+          <div class="avatar"></div>
+          <div>@TaniyaC</div>
+        </div>
+        <div class="notif">
+          <i class="bi bi-bell-fill"></i>
+          <ul class="notif-dropdown">
+            <li>New answer on your question</li>
+            <li>Upvote received 🎯</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feed -->
+      <div class="section" id="feed">
+        <div class="feed">
+          <div class="post">
+            <div class="d-flex justify-content-between">
+              <strong>@dev_girl</strong>
+              <button class="btn-follow btn-sm">Follow</button>
+            </div>
+            <p>How to optimize React performance on large datasets?</p>
+            <div class="d-flex gap-3">
+              <button class="btn-post" onclick="vote(this, 'up')">👍 14</button>
+              <button class="btn-post" onclick="vote(this, 'down')">👎 2</button>
+            </div>
+          </div>
+          <!-- Add more demo posts here -->
+        </div>
+      </div>
+
+      <!-- Ask Question -->
+      <div class="section" id="ask" style="display: none;">
+        <div class="post-box">
+          <h4>Ask a Question</h4>
+          <input type="text" class="form-control mb-2" id="qTitle" placeholder="Enter question title" />
+          <div id="editor" style="height: 150px;"></div>
+          <button class="btn-post mt-3" onclick="submitQuestion()">Post Question</button>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div class="section" id="settings" style="display: none;">
+        <div class="post-box">
+          <h4>Settings</h4>
+          <p><strong>Username:</strong> @TaniyaC</p>
+          <p><strong>Email:</strong> taniya@example.com</p>
+          <hr />
+          <button class="btn-post mb-2">Edit Profile</button>
+          <button class="btn-follow mb-2">View My Posts</button>
+          <button class="btn btn-outline-danger w-100">Delete Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+  <script src="user.js"></script>
+</body>
+</html>

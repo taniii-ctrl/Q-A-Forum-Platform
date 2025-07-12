@@ -1,0 +1,134 @@
+/* style.css - Neon Boosted Login Page for StackIt with Effects */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 50% 20%, #120032, #050018);
+  color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease-in;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.card {
+  border-radius: 1rem;
+  background: rgba(32, 0, 54, 0.85);
+  box-shadow: 0 0 30px rgba(183, 102, 255, 0.8), 0 0 60px rgba(183, 102, 255, 0.3);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 10;
+  animation: float 6s ease-in-out infinite;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 45px rgba(225, 160, 255, 0.9);
+}
+
+h3 {
+  color: #f6d0ff;
+  text-shadow: 0 0 10px #b46bff, 0 0 20px #8b00ff;
+  font-weight: 700;
+}
+
+input.form-control, select.form-select {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #b880ff;
+  color: #fff;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+input.form-control::placeholder {
+  color: #efcfff;
+  opacity: 0.8;
+}
+
+input.form-control, select.form-select {
+  background-color: rgba(95, 65, 115, 0.3); /* ash-purple shade */
+  border: 1px solid #c48cff;
+  color: #f5eaff;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+
+.btn {
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(190, 100, 255, 0.4);
+}
+
+.btn-danger {
+  background: linear-gradient(to right, #f700ff, #7d2cff);
+  border: none;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  box-shadow: 0 0 35px rgba(250, 120, 255, 0.9);
+  transform: scale(1.06);
+}
+
+.btn-outline-light {
+  border: 1px solid #d7b3ff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-outline-light:hover {
+  background: linear-gradient(to right, #a145f2, #bf8bff);
+  color: #000;
+  box-shadow: 0 0 25px rgba(223, 180, 255, 0.6);
+}
+
+hr {
+  border-top: 1px solid #fff;
+  opacity: 0.15;
+}
+
+#authMessage {
+  font-weight: 600;
+  color: #ff66cc;
+  text-shadow: 0 0 5px #ff99cc;
+}
+
+/* Extra Neon Orb */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.3), transparent 70%);
+  filter: blur(90px);
+  animation: float 10s ease-in-out infinite;
+  z-index: 1;
+}
+
+body::before {
+  top: 15%;
+  left: 10%;
+}
+
+body::after {
+  bottom: 10%;
+  right: 10%;
+}
